@@ -1,0 +1,98 @@
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-commerse Webpage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./products.component.css">
+</head>
+
+<body>
+  <a class="description1" routerLink="/home">Home</a>
+  <section class="product-title">
+    <h1>Products</h1>
+    <hr>
+    <div class="product-slider">
+      <div class="container">
+        
+        <div class="product1" routerLink="/headphones">
+          
+          <div class="container">
+            <div class="product-picture">
+              <img src="../assets/sony.png">
+            </div>
+
+          </div>
+          <div class="product-info">
+            <h4 class="categories">Headphones</h4>
+            <!-- <a class="description" >Description</a> -->
+            <h3 class="title">Sony WH-1000XM5 Wireless Industry Leading Active Noise Cancelling Headphones</h3>
+            <h2 class="price">₹ 29,990.99</h2>
+            <button>Add to bag</button>
+          </div>
+        </div>
+        
+        <div class="product2" routerLink="/sunglasses">
+          <div class="container">
+            <div class="product-picture">
+              <img src="../assets/RB.png">
+            </div>
+          </div>
+          <div class="product-info">
+            <h4 class="categories">Sunglasses</h4>
+            <!-- <a class="description" >Description</a> -->
+            <h3 class="title">RAY-BAN Sunglasses RB2140 WAYFARER</h3>
+            <h2 class="price">₹11,390.99</h2>
+            <button>Add to bag</button>
+          </div>
+        </div>
+
+        <div class="product3" routerLink="/watch">
+          <div class="container">
+            <div class="product-picture">
+              <img src="../assets/A_1.png">
+            </div>
+          </div>
+          <div class="product-info">
+            <h4 class="categories">Watch</h4>
+            <!-- <a class="description" >Description</a> -->
+            <h3 class="title">Apple Watch Series 7 Midnight Aluminium Case with Midnight Sport Band - Regular</h3>
+            <h2 class="price">₹ 41,705.99</h2>
+            <button>Add to bag</button>
+          </div>
+        </div>
+      </div>
+     <ng-container class="cont">
+      <!-- <div class="container1"> -->
+        <!-- <tr>
+          <td>Assets</td>
+          <td>Catagories</td>
+          <td>Search</td>
+          <td>Description</td>
+        </tr> -->
+            <div class="value" *ngFor="let com of lstcomments">
+              <img [src]="com.assets[0].image_source">
+              <h5 class="categories"><span>{{com.product_type}}</span></h5>
+              <h5 class="title"><span>{{com.name}}</span></h5>
+              <h5 class="price"><span>₹ {{com.pricing.raw.sale_price}}</span></h5>
+            <h5 class="desc"><span>{{com.description.description}}</span></h5>
+            <button>Add to bag</button>
+            </div>
+      <!-- </div> -->
+    </ng-container>
+    </div>
+
+  </section>
+  <!-- <div class="container">
+  <div class="import" *ngfor="let com for lstcomments">
+    <img src="https://ecbee-labes-images.s3.ap-south-1.amazonaws.com/Haven/Brand/1638260509865%20-%20member%20details.JPG">
+  <td>{{com.assets}}</td>
+  <td>{{com.categories}}</td>
+  <td>{{com.search}}</td>
+  <td>{{com.description}}</td>
+  </div>
+  </div> -->
+</body>
+
+</html>
+
